@@ -113,7 +113,21 @@ export default function App() {
           </View>
           <View style={styles.slots}>
             <View style={styles.venue}>
-            <TouchableOpacity>
+              <TouchableOpacity>
+                <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+              </TouchableOpacity>
+              <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
+            </View>
+            <View style={styles.timings}>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+
+            </View>
+          </View>
+          <View style={styles.slots}>
+            <View style={styles.venue}>
+              <TouchableOpacity>
                 <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
               </TouchableOpacity>
               <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
@@ -153,16 +167,70 @@ export default function App() {
 
             </View>
           </View>
+          <View style={styles.slots}>
+            <View style={styles.venue}>
+            <TouchableOpacity>
+                <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+              </TouchableOpacity>
+              <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
+            </View>
+            <View style={styles.timings}>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
 
-
-
+            </View>
+          </View>
         </View>
-
-
       </View>
+  : null}
 
-        : null}
+<View style={styles.footer}>
+<View style={styles.contactUs}>
+<Text style={{fontSize:20 ,color:'white'}}> 
+<TouchableOpacity>
+  <Image style={styles.building_img} source={require('../page/assets/office-building.png')} />
+</TouchableOpacity>
+List your Show
+  Got a show, event, activity or a great experience? Partner with us & get listed on TxiTo</Text>
+<TouchableOpacity>
+ <Text style={styles.sell}> ContactUs</Text>
+</TouchableOpacity>
+</View>
+<View style={styles.extra_service}>
+<View style={styles.customer_care}><TouchableOpacity>
+  <Image style={styles.service_img} source={require('../page/assets/customer-service.png')} />
+</TouchableOpacity>
+  <Text style={{fontSize:15,color:'white',fontWeight:'500',fontStyle:'italic'}}>24/7 Customer Care</Text>
+</View>
+<View style={styles.customer_care}>
+<TouchableOpacity>
+  <Image style={styles.service_img} source={require('../page/assets/ticket.png')} />
+</TouchableOpacity>
+  <Text style={{fontSize:15,color:'white',fontWeight:'500',fontStyle:'italic'}}>Resend Ticket Confirmation</Text>
+</View>
+<View style={styles.customer_care}>
+<TouchableOpacity>
+  <Image style={styles.service_img} source={require('../page/assets/email.png')} />
+</TouchableOpacity>
+<Text style={{fontSize:15,color:'white',fontWeight:'500',fontStyle:'italic'}}>Subscribe to news Letter</Text>
+</View>
 
+</View>
+
+<View style={styles.finalfooter}>
+<Image style={styles.logo} source={require('../page/assets/TIXITO-white.png')} />  
+</View>
+<View style={styles.links}>
+<Image style={styles.social_logo} source={require('../page/assets/twitter.png')} />  
+<Image style={styles.social_logo} source={require('../page/assets/instagram.png')} />
+<Image style={styles.social_logo} source={require('../page/assets/facebook.png')} />
+<Image style={styles.social_logo} source={require('../page/assets/pinterest-circular-logo-symbol.png')} />
+<Image style={styles.social_logo} source={require('../page/assets/linkedin.png')} /> 
+</View>
+<Text style={{fontSize:10,marginHorizontal:'15%',marginTop:'2%', justifyContent:'center',color:'grey',fontStyle:'italic'}}>Copyright 2023 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and images on this website is intended to promote the works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</Text>
+</View>
       <StatusBar style="auto" />
 
     </View>
@@ -176,12 +244,84 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     // justifyContent: 'center',
   },
+  footer:{
+    backgroundColor: "#20272F",
+    // height: "30%",
+    width: "100%",
+    padding: 10,
+    paddingTop: 20,
+    
+  },
+  finalfooter:{
+    // backgroundColor:'green',
+    borderTopWidth:1,
+    padding:"1%",
+    borderColor:"white",
+    width:"100%",
+    // height:"30%",
+    justifyContent:"center",
+    alignContent:'center',
+    flexDirection:'row'
+  },
+  links:{
+    // backgroundColor:'blue',
+    width:"100%",
+    // height:"30%",
+    padding:"2%",
+    justifyContent:"center",
+    alignContent:'center',
+    flexDirection:'row'
+  },
+  building_img:{
+    margin:5,
+    height:25,
+    width:25
+  },
+  service_img:{
+height:50,
+width:50
+  },
+  social_logo:{
+    height:20,
+    width:20,
+    marginHorizontal:"1%"
+  },
+  contactUs:{
+    width:"100%",
+    // height:"25%",
+    // backgroundColor:"white",
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    padding:10
+    
+  },
+  customer_care:{
+    width:'33%',
+    height:'100%',
+    borderRightWidth:1,
+    borderLeftWidth:1,
+    borderColor:"#FFFF",
+    padding:20,
+    alignItems:'center',
+    flex:1,
+    flexDirection:'column'
+  },
+  extra_service:{
+    width:"100%",
+    // height:"25%",
+    // backgroundColor:"red",
+    flexDirection:'row',
+    justifyContent:'space-evenly',
+    padding:10,
+    marginVertical:30
+    
+  },
   sell: {
 
     color: "white",
     paddingHorizontal: 20,
     paddingVertical: 5,
-    borderRadius: 2,
+    borderRadius: 3,
     // margin:10,
     marginHorizontal: 10,
     fontSize: 15,
@@ -214,7 +354,7 @@ marginRight:5
 
   header: {
     backgroundColor: "#20272F",
-    height: "30%",
+    height: "20%",
     width: "100%",
     padding: 10,
     paddingTop: 30,
@@ -279,7 +419,7 @@ marginRight:5
   },
   slots: {
     backgroundColor: "white",
-    height: "20%",
+    height: "14%",
     width: "99%",
     // borderWidth:1
     borderBottomWidth: 1,
@@ -304,7 +444,7 @@ marginRight:5
   // },
   filter: {
     backgroundColor: "#64BEEB",
-    height: "7%",
+    height: "3%",
     flexDirection: 'row',
 
     // borderWidth:1,
