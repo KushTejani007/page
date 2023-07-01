@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, Modal, ScrollView, StyleSheet, Text, TextInput, View, Image, TouchableOpacity, FlatList } from 'react-native';
+import { Button, Modal, ScrollView, StyleSheet, Text, TextInput, View, Image, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import { Picker } from '@react-native-picker/picker';
 import Icon from 'react-native-fontawesome';
@@ -12,7 +12,11 @@ export default function App() {
   const [isclicked, setisclicked] = useState(false);
   const [openbody, setopenbody] = useState(true);
   const [data, setdata] = useState(range);
-  const [datee, setdatee] = useState('Dates')
+  const [datee, setdatee] = useState('Dates');
+  const [isliked,setisliked]=useState(false);
+  const togglelike=()=>{
+    setisliked(!isliked)
+  }
   const range = [
     { range: "10-200" },
     { range: "200-300" },
@@ -99,23 +103,67 @@ export default function App() {
         <View style={styles.body_conatiner}>
           <View style={styles.slots}>
             <View style={styles.venue}>
-              <TouchableOpacity>
+            <TouchableOpacity onPress={togglelike}>
+                {isliked? 
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />:
                 <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
               </TouchableOpacity>
               <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
+            
             </View>
             <View style={styles.timings}>
               <Text style={styles.timings_text}>12:00 Pm</Text>
-              <Text style={styles.timings_text}>12:00 Pm</Text>
-              <Text style={styles.timings_text}>12:00 Pm</Text>
+              <Text style={styles.timings_text}>4:00 Pm</Text>
+              <Text style={styles.timings_text}>9:00 Pm</Text>
             </View>
           
           </View>
           <View style={styles.slots}>
             <View style={styles.venue}>
-              <TouchableOpacity>
+            <TouchableOpacity onPress={togglelike}>
+                {isliked? 
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />:
                 <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
               </TouchableOpacity>
+
+              <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
+            </View>
+            <View style={styles.timings}>
+              <Text style={styles.timings_text}>10:00 Am</Text>
+              <Text style={styles.timings_text}>3:00 Pm</Text>
+              <Text style={styles.timings_text}>6:00 Pm</Text>
+
+            </View>
+          </View>
+          <View style={styles.slots}>
+            <View style={styles.venue}>
+            <TouchableOpacity onPress={togglelike}>
+
+                {isliked? 
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />:
+                <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
+              </TouchableOpacity>
+
+              <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
+            </View>
+            <View style={styles.timings}>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+              <Text style={styles.timings_text}>12:00 Pm</Text>
+
+            </View>
+          </View>
+          <View style={styles.slots}>
+            <View style={styles.venue}>
+            <TouchableOpacity onPress={togglelike}>
+                {isliked? 
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />:
+                <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
+              </TouchableOpacity>
+
               <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
             </View>
             <View style={styles.timings}>
@@ -127,9 +175,13 @@ export default function App() {
           </View>
           <View style={styles.slots}>
             <View style={styles.venue}>
-              <TouchableOpacity>
+            <TouchableOpacity onPress={togglelike}>
+                {isliked? 
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />:
                 <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
               </TouchableOpacity>
+
               <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
             </View>
             <View style={styles.timings}>
@@ -141,9 +193,14 @@ export default function App() {
           </View>
           <View style={styles.slots}>
             <View style={styles.venue}>
-              <TouchableOpacity>
+            <TouchableOpacity onPress={togglelike}>
+                {isliked?
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />
+                :
                 <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
               </TouchableOpacity>
+
               <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
             </View>
             <View style={styles.timings}>
@@ -155,23 +212,14 @@ export default function App() {
           </View>
           <View style={styles.slots}>
             <View style={styles.venue}>
-              <TouchableOpacity>
+            <TouchableOpacity onPress={togglelike}>
+                {isliked?
+                <Image style={styles.like_btn} source={require('../page/assets/heart2.png')} />
+                :
                 <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
+                }
               </TouchableOpacity>
-              <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
-            </View>
-            <View style={styles.timings}>
-              <Text style={styles.timings_text}>12:00 Pm</Text>
-              <Text style={styles.timings_text}>12:00 Pm</Text>
-              <Text style={styles.timings_text}>12:00 Pm</Text>
 
-            </View>
-          </View>
-          <View style={styles.slots}>
-            <View style={styles.venue}>
-              <TouchableOpacity>
-                <Image style={styles.like_btn} source={require('../page/assets/love.png')} />
-              </TouchableOpacity>
               <Text style={styles.venue_text}>INOX: Thakur Mall, Dahisar</Text>
             </View>
             <View style={styles.timings}>
@@ -419,7 +467,7 @@ const styles = StyleSheet.create({
   },
   slots: {
     backgroundColor: "white",
-    height: "14%",
+    height: "12%",
     width: "99%",
     // borderWidth:1
     borderBottomWidth: 1,
