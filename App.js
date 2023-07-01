@@ -108,8 +108,8 @@ export default function App() {
               <Text style={styles.timings_text}>12:00 Pm</Text>
               <Text style={styles.timings_text}>12:00 Pm</Text>
               <Text style={styles.timings_text}>12:00 Pm</Text>
-
             </View>
+          
           </View>
           <View style={styles.slots}>
             <View style={styles.venue}>
